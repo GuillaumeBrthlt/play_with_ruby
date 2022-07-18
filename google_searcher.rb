@@ -4,7 +4,7 @@ browser_opts = {detach: true}
 browser = Watir::Browser.new:chrome, options: browser_opts
 browser.goto 'https://www.google.com/?gws_rd=ssl'
 
-research = ARGV.first
+research = ARGV.join(" ")
 
 accept_button = browser.button(id: 'L2AGLb')
 
