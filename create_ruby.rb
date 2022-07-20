@@ -28,6 +28,13 @@ def create_gemfile
   file.close
 end
 
+def create_app
+  file = File.open("app.rb", "w")
+  file.puts("require 'bundler'")
+  file.puts("Bundler.require")
+  file.close
+end
+
 def create_env
   file = File.open(".env", "w")
   file.close
@@ -51,6 +58,8 @@ def perform
   init_git_rspec(folder_name)
   create_gemfile
   create_env
+  create_readme
+  create_app
 end
 
 perform
