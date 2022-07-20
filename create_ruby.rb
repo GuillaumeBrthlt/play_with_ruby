@@ -33,6 +33,11 @@ def create_env
   file.close
 end
 
+def create_readme
+  file = File.open("README.md", "w")
+  file.close
+end
+
 def init_git_rspec(folder_name)
   Dir.chdir("#{folder_name}")
   system("rspec --init")
