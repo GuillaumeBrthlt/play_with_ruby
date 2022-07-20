@@ -32,6 +32,8 @@ def create_app
   file = File.open("app.rb", "w")
   file.puts("require 'bundler'")
   file.puts("Bundler.require")
+  file.puts("")
+  file.puts("$:.unshift File.expand_path('./../lib', __FILE__)")
   file.close
 end
 
